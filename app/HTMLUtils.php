@@ -28,7 +28,7 @@ class HTMLUtils {
             case 'rosa':
                 return '#F7B8D7';
             default :
-                return "#007AFF";
+                return null;
         }
     }
 

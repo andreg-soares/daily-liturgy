@@ -53,6 +53,9 @@ class DailyLiturgy
 
     public function toArray()
     {
+        if(is_null($this->page->getTitle())){
+            return false;
+        }
         return array(
             'title' => $this->page->getTitle(),
             'color_text' => $this->page->getColor(),

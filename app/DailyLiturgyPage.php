@@ -20,7 +20,10 @@ class DailyLiturgyPage extends Page {
     }
 
     public function getTitle() {
-        return HTMLUtils::removeBreak($this->finder->query("//h2")->item(0)->nodeValue);
+        if(!is_null($this->finder->query("//h2")->item(0))){
+            return HTMLUtils::removeBreak($this->finder->query("//h2")->item(0)->nodeValue);
+        }
+        return null;
     }
 
     public function getUrl() {
@@ -29,7 +32,10 @@ class DailyLiturgyPage extends Page {
 
     public function getColor() {
         $query = "descendant-or-self::*[contains(concat(' ', normalize-space(@class), ' '), ' container ')]/descendant::em";
-        return HTMLUtils::colorText($this->finder->query($query)->item(0)->nodeValue);
+        if(!is_null($this->finder->query($query)->item(0))){
+            return HTMLUtils::colorText($this->finder->query($query)->item(0)->nodeValue);
+        }
+        return null;
     }
 
     public function getReadings() {
