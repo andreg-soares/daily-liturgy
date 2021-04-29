@@ -18,7 +18,7 @@ class HTMLUtils {
     {
         switch (strtolower($query)) {
             case 'branco':
-                return '#FEDD16';
+                return '#FFFFFF';
             case 'verde':
                 return '#2FB166';
             case 'vermelho':
